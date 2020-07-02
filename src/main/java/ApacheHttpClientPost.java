@@ -17,10 +17,9 @@ public class ApacheHttpClientPost {
 
         try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
 
-            String Authorization = "Team8555018:QK59686453";
-            String basicAuth = "Basic"  + (Base64.encode(Authorization.getBytes()));
+
             HttpPost request = new HttpPost("http://94.182.190.122/Init/ProgrammingLanguage");
-            request.addHeader("Authorization", basicAuth);
+            request.addHeader("Authorization", Constants.basicAuth);
             request.addHeader("ApiKey", "ictchallenge");
             request.addHeader("Content-Type", "application/json");
 
