@@ -1,16 +1,14 @@
+package ir.nargil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-import models.Team;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-
+import static ir.nargil.Constants.*;
 public class ApacheHttpClientPost {
 
     public static void main(String[] args) throws IOException {
@@ -18,7 +16,7 @@ public class ApacheHttpClientPost {
         try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
 
 
-            HttpPost request = new HttpPost("http://94.182.190.122/Init/ProgrammingLanguage");
+            HttpPost request = new HttpPost(URL_ADDRESS+"/Init/ProgrammingLanguage");
             request.addHeader("Authorization", Constants.basicAuth);
             request.addHeader("ApiKey", "ictchallenge");
             request.addHeader("Content-Type", "application/json");

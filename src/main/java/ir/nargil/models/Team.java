@@ -1,4 +1,4 @@
-package models;
+package ir.nargil.models;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package models;
+package ir.nargil.models;
 
 public class Member {
     String FirstName;
