@@ -19,7 +19,7 @@ public class SignUp extends SendRequest {
 
     public SignUp () throws JsonProcessingException, UnsupportedEncodingException, FileNotFoundException {
         super("/Authentication/SignUp");
-        request.addHeader("authorization", Constants.basicAuth);
+        request.addHeader("Authorization", Constants.basicAuth);
         request.setEntity(new StringEntity(getBody()));
     }
 
