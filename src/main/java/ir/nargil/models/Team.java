@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Team {
     String TeamName;
-    String ProgramingLanguageId;
+    int ProgramingLanguageId;
     ArrayList<Member> members;
 
-    public Team(String teamName, String programingLanguageId, ArrayList<Member> members) {
+    public Team(String teamName, int programingLanguageId, ArrayList<Member> members) {
         TeamName = teamName;
         ProgramingLanguageId = programingLanguageId;
         this.members = members;
@@ -21,11 +21,11 @@ public class Team {
         TeamName = teamName;
     }
 
-    public String getProgramingLanguageId() {
+    public int getProgramingLanguageId() {
         return ProgramingLanguageId;
     }
 
-    public void setProgramingLanguageId(String programingLanguageId) {
+    public void setProgramingLanguageId(int programingLanguageId) {
         ProgramingLanguageId = programingLanguageId;
     }
 
