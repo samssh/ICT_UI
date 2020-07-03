@@ -9,6 +9,7 @@ public class SendMessage extends SendRequest{
 
     public SendMessage(String post, String text, int dependedOn) throws IOException {
         super(post);
+        request.addHeader("Content-Type", Constants.Content_Type);
         StringEntity stringEntity;
         if (dependedOn == -1){
             stringEntity = new StringEntity("{\n" +

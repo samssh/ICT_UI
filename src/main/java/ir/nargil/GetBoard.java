@@ -5,10 +5,10 @@ import org.apache.http.entity.StringEntity;
 import java.io.IOException;
 
 public class GetBoard extends SendRequest{
-    public GetBoard(String post) throws IOException {
-        super(post);
+    public GetBoard() throws IOException {
+        super("/Questions/Score");
+        request.addHeader("Content-Type", Constants.Content_Type);
         Token token = new Token();
         request.addHeader("Authorization", "Bearer " + token.getToken());
-       //request.setEntity(new StringEntity("{\"ProgrammingLanguageId\" : 2}"));
     }
 }

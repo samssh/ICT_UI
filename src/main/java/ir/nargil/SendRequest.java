@@ -15,8 +15,8 @@ public abstract class SendRequest {
 
     public SendRequest(String post) {
         HttpPost request = new HttpPost(URL_ADDRESS + post);
-        request.addHeader("ApiKey", "ictchallenge");
-        request.addHeader("Content-Type", "application/json");
+        System.out.println(URL_ADDRESS + post);
+        request.addHeader("ApiKey", Api_key);
         this.request = request;
     }
 

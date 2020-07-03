@@ -1,30 +1,22 @@
 package ir.nargil;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import ir.nargil.SendRequest;
-import ir.nargil.models.Member;
-import ir.nargil.models.Team;
 import org.apache.http.entity.StringEntity;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Constructor;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SignUp extends SendRequest {
-    private Team team;
-
-    public SignUp () throws JsonProcessingException, UnsupportedEncodingException, FileNotFoundException {
+    public SignUp () throws UnsupportedEncodingException, FileNotFoundException {
         super("/Authentication/SignUp");
-        request.addHeader("Authorization", Constants.basicAuth);
+        request.addHeader("Authorization", Constants.getBasicAuth());
+        request.addHeader("Content-Type", Constants.Content_Type);
         request.setEntity(new StringEntity(getBody()));
     }
 
     String getBody() throws FileNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("src\\main\\java\\ir\\nargil\\tmep.json");
+        FileInputStream fileInputStream = new FileInputStream(Constants.USER_INFO_PATH);
         Scanner scanner = new Scanner(fileInputStream);
         StringBuilder stringBuilder = new StringBuilder();
         while (scanner.hasNext()){
@@ -32,6 +24,4 @@ public class SignUp extends SendRequest {
         }
         return stringBuilder.toString();
     }
-
-
 }
